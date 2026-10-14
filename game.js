@@ -256,6 +256,7 @@ function loop(ts) {
     }
   }
   draw();
+  if (gameOver) return; // endGame() corrió dentro de este frame: cancelAnimationFrame no lo detiene
   animId = requestAnimationFrame(loop);
 }
 
