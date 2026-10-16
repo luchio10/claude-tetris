@@ -45,6 +45,7 @@ Es una versión jugable del Tetris clásico con todas las mecánicas que esperar
 - **Efectos visuales** (textos flotantes, indicador COMBO, destello) y **sonidos** sintetizados con Web Audio, con opción de silenciar.
 - **Niveles** que aumentan cada 10 líneas y aceleran la caída.
 - **Pausa** y **Game Over** con opción de reinicio.
+- **Tabla de records local**: top 5 guardado en `localStorage` (clave `records`) con nombre, puntos, líneas y fecha. Se muestra en la pantalla de inicio (botón **Jugar**) y al terminar la partida, donde puedes escribir tu nombre (máx. 12 caracteres) y ver tu entrada resaltada. También guarda el **mejor combo** y las **líneas máximas**, y el botón **Borrar records** lo reinicia todo. Una puntuación de 0 no entra en la tabla.
 
 ---
 
