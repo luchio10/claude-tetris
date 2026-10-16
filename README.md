@@ -44,7 +44,8 @@ Es una versión jugable del Tetris clásico con todas las mecánicas que esperar
 - **Bonus T-spin** (regla de las 3 esquinas), **Back-to-Back** (Tetris/T-spin seguidos, x1.5) y **Perfect Clear** (tablero vacío).
 - **Efectos visuales** (textos flotantes, indicador COMBO, destello) y **sonidos** sintetizados con Web Audio, con opción de silenciar.
 - **Niveles** que aumentan cada 10 líneas y aceleran la caída.
-- **Pausa** y **Game Over** con opción de reinicio.
+- **Menú de pausa** (`P` o `Esc`) con Reanudar, Reiniciar, Ver controles y selector de **nivel inicial** (1–10, guardado en `localStorage`; se aplica al reiniciar); los controles del juego quedan bloqueados mientras está abierto.
+- **Game Over** con opción de reinicio.
 
 ---
 
@@ -87,7 +88,7 @@ Después abre `http://localhost:8000` en el navegador.
 | `↑` o `X` | Rotar la pieza en sentido horario |
 | `↓`       | Soft drop (bajar más rápido)      |
 | `Espacio` | Hard drop (caída instantánea)     |
-| `P`       | Pausar / reanudar                 |
+| `P` o `Esc` | Abrir / cerrar el menú de pausa |
 | `M`       | Activar / silenciar el sonido     |
 
 ### Puntuación

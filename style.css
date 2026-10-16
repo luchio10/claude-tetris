@@ -221,3 +221,75 @@ kbd {
 #restart-btn:hover {
   background: var(--accent-hover);
 }
+
+/* ---- Menú de pausa ---- */
+.pause-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: stretch;
+  min-width: 180px;
+}
+
+.pause-menu.hidden,
+.pause-controls.hidden,
+#restart-btn.hidden {
+  display: none;
+}
+
+.pause-menu button {
+  background: var(--kbd-bg);
+  color: var(--text);
+  border: 1px solid var(--kbd-border);
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.pause-menu button:hover,
+.pause-menu button:focus-visible {
+  border-color: var(--accent);
+  outline: none;
+}
+
+.pause-menu #resume-btn {
+  background: var(--accent);
+  color: var(--btn-text);
+  border-color: var(--accent);
+  font-weight: 700;
+}
+
+.pause-controls {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: left;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.pause-controls li {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.level-select {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.level-select select {
+  background: var(--kbd-bg);
+  color: var(--text);
+  border: 1px solid var(--kbd-border);
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 12px;
+}
