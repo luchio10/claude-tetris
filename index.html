@@ -93,6 +93,20 @@
             <select id="start-level" aria-label="Nivel inicial"></select>
           </label>
         </div>
+        <p id="record-msg"></p>
+        <div id="name-form" class="hidden">
+          <input id="name-input" type="text" maxlength="12" value="Jugador" autocomplete="off" aria-label="Nombre del jugador" />
+          <button id="save-btn" type="button">Guardar</button>
+        </div>
+        <div id="records">
+          <table id="records-table">
+            <caption>MEJORES PUNTUACIONES</caption>
+            <thead><tr><th>#</th><th>Nombre</th><th>Puntos</th><th>Líneas</th><th>Fecha</th></tr></thead>
+            <tbody id="records-body"></tbody>
+          </table>
+          <p id="records-stats"></p>
+          <button id="clear-records-btn" type="button">Borrar records</button>
+        </div>
         <button id="restart-btn">Reiniciar</button>
       </div>
     </div>
