@@ -107,8 +107,8 @@ const SKINS = {
   pastel: {
     label: 'Pastel',
     colors: [null, '#a8e6ef', '#fff1b0', '#d9b8f0', '#b8e8c0', '#f7b8b8', '#b3d4f7', '#fcd5a5'],
-    bg: light => (light ? '#fdf7fb' : '#2b2736'),
-    grid: light => (light ? '#efe6ee' : '#38334a'),
+    bg: light => (light ? '#d9d2de' : '#2b2736'),
+    grid: light => (light ? '#c9c1cf' : '#38334a'),
     block(context, px, py, size, color) {
       context.fillStyle = color;
       roundedRect(context, px + 1.5, py + 1.5, size - 3, size - 3, size * 0.28);
@@ -612,6 +612,7 @@ soundToggle.addEventListener('click', () => {
   soundToggle.blur();
 });
 
+skinSelect.addEventListener('keydown', e => { if (e.code === 'Escape') skinSelect.blur(); });
 skinSelect.addEventListener('change', () => {
   applySkin(skinSelect.value);
   skinSelect.blur();
