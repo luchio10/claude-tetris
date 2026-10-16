@@ -111,7 +111,8 @@ body {
 }
 
 /* ---- Switch de tema ---- */
-#theme-toggle {
+#theme-toggle,
+#sound-toggle {
   background: var(--kbd-bg);
   color: var(--text);
   border: 1px solid var(--kbd-border);
@@ -121,8 +122,23 @@ body {
   cursor: pointer;
 }
 
-#theme-toggle:hover {
+#theme-toggle:hover,
+#sound-toggle:hover {
   border-color: var(--accent);
+}
+
+/* ---- Combo ---- */
+#combo.pulse {
+  animation: combo-pulse 0.35s ease-out;
+}
+
+@keyframes combo-pulse {
+  0% { transform: scale(1.5); }
+  100% { transform: scale(1); }
+}
+
+#combo {
+  transform-origin: left center;
 }
 
 /* ---- Controles ---- */

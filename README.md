@@ -40,6 +40,9 @@ Es una versión jugable del Tetris clásico con todas las mecánicas que esperar
 - **Pieza fantasma** (_ghost piece_): muestra dónde aterrizará la pieza actual.
 - **Vista previa** de la siguiente pieza.
 - **Sistema de puntuación** clásico de Tetris (100 / 300 / 500 / 800 multiplicado por nivel).
+- **Combo y multiplicadores**: limpiar líneas en piezas consecutivas multiplica la puntuación (x2, x3, x4…, sin tope); fallar una limpieza rompe la cadena.
+- **Bonus T-spin** (regla de las 3 esquinas), **Back-to-Back** (Tetris/T-spin seguidos, x1.5) y **Perfect Clear** (tablero vacío).
+- **Efectos visuales** (textos flotantes, indicador COMBO, destello) y **sonidos** sintetizados con Web Audio, con opción de silenciar.
 - **Niveles** que aumentan cada 10 líneas y aceleran la caída.
 - **Pausa** y **Game Over** con opción de reinicio.
 
@@ -85,6 +88,20 @@ Después abre `http://localhost:8000` en el navegador.
 | `↓`       | Soft drop (bajar más rápido)      |
 | `Espacio` | Hard drop (caída instantánea)     |
 | `P`       | Pausar / reanudar                 |
+| `M`       | Activar / silenciar el sonido     |
+
+### Puntuación
+
+`puntos = base × nivel × (combo + 1)`, donde `combo` es 0 en la primera limpieza de una cadena y sube 1 por cada pieza consecutiva que limpie líneas.
+
+| Jugada                | Base (1 / 2 / 3 / 4 líneas) |
+| --------------------- | --------------------------- |
+| Líneas normales       | 100 / 300 / 500 / 800       |
+| T-spin (0 a 3 líneas) | 400 / 800 / 1200 / 1600     |
+
+- **Back-to-Back**: un Tetris o T-spin con líneas justo después de otro "difícil" multiplica la base por 1.5 (una limpieza normal rompe la racha).
+- **Perfect Clear**: bonus extra × nivel de 800 / 1200 / 1800 / 2000 según las líneas de la última limpieza.
+- **T-spin**: pieza T cuyo último movimiento fue una rotación y con 3 o más esquinas de su caja 3×3 ocupadas.
 
 ---
 
@@ -158,7 +175,7 @@ Cuando una pieza recién generada ya colisiona al aparecer (`spawn`), se dispara
 03-tetris/
 ├── index.html      # Estructura del DOM y canvas
 ├── style.css       # Estilos del juego (temas oscuro y claro)
-├── game.js         # Toda la lógica del Tetris (~300 líneas)
+├── game.js         # Toda la lógica del Tetris (~500 líneas)
 └── README.md
 ```
 
@@ -176,6 +193,9 @@ Algunos parámetros fáciles de tunear en `game.js`:
 | `COLORS`       | Paleta de colores por tipo de pieza      | 7 colores             |
 | `LINE_SCORES`  | Puntos por 1, 2, 3 o 4 líneas eliminadas | `[0,100,300,500,800]` |
 | `dropInterval` | Velocidad inicial de caída en ms         | `1000`                |
+| `TSPIN_SCORES` | Puntos base de T-spin (0 a 3 líneas)     | `[400,800,1200,1600]` |
+| `PERFECT_CLEAR_SCORES` | Bonus de Perfect Clear           | `[0,800,1200,1800,2000]` |
+| `B2B_MULTIPLIER` | Multiplicador Back-to-Back             | `1.5`                 |
 
 > Si cambias `COLS`, `ROWS` o `BLOCK`, recuerda ajustar también `width` y `height` del `<canvas id="board">` en `index.html` para que coincida (`COLS × BLOCK` × `ROWS × BLOCK`).
 
