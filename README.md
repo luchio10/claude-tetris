@@ -43,6 +43,7 @@ Es una versión jugable del Tetris clásico con todas las mecánicas que esperar
 - **Combo y multiplicadores**: limpiar líneas en piezas consecutivas multiplica la puntuación (x2, x3, x4…, sin tope); fallar una limpieza rompe la cadena.
 - **Bonus T-spin** (regla de las 3 esquinas), **Back-to-Back** (Tetris/T-spin seguidos, x1.5) y **Perfect Clear** (tablero vacío).
 - **Efectos visuales** (textos flotantes, indicador COMBO, destello) y **sonidos** sintetizados con Web Audio, con opción de silenciar.
+- **Skins**: selector "SKIN" en el panel lateral con cuatro estilos (Retro, Neon, Pastel, Pixel art) que cambian paleta, fondo y dibujo de los bloques; se guarda en `localStorage` (`skin`) y convive con el tema claro/oscuro (Neon siempre usa fondo negro).
 - **Niveles** que aumentan cada 10 líneas y aceleran la caída.
 - **Pausa** y **Game Over** con opción de reinicio.
 
